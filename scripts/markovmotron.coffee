@@ -26,13 +26,15 @@ module.exports = (robot) ->
 
   # any string 2 words or greater (roughly)
   robot.hear /^.*\w+\W+\w+/, (msg)->
+    console.log(markovmotronIsAlive + )
     return unless markovmotronIsAlive
-    return unless msg.random(probability)
+    # return unless msg.random(probability)
 
     maxResponse = msg.random(maxWords)
     options     = "--words=#{maxResponse} --corpus=#{path}/corpus.txt --prefix=#{prefixLen}"
     command     = "echo \"#{msg.match[0]}\" | bin/markovmotron #{options}"
 
+    console.log(maxResponse + options + command)
     exec command, (err, stdout, stderr)->
       return console.log('exec error: ' + err, command) if err
       setTimeout () ->  # delay for realism
