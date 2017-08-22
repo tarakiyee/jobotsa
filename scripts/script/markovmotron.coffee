@@ -18,7 +18,7 @@
 module.exports = (robot) ->
 
   markovmotronIsAlive = false
-  probability         = [false, false, false, false, true]
+  probability         = true
   maxWords            = [5, 7, 9, 11, 13, 15, 17, 19, 25]
   prefixLen           = 4
   exec                = require('child_process').exec
