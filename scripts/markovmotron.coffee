@@ -32,7 +32,7 @@ module.exports = (robot) ->
 
     maxResponse = msg.random(maxWords)
     options     = "--words=#{maxResponse} --corpus=#{path}/corpus.txt --prefix=#{prefixLen}"
-    command     = "echo \"#{msg.match[0]}\" | bin/markovmotron #{options}"
+    command     = "echo \"#{msg.match[0]}\" | bin/markovmotron-linux #{options}"
 
     console.log(maxResponse + options + command)
     exec command, (err, stdout, stderr)->
