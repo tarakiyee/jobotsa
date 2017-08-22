@@ -18,7 +18,7 @@
 module.exports = (robot) ->
 
   markovmotronIsAlive = false
-  probability         = true
+  probability         = [false, false, false, false, true]
   maxWords            = [5, 7, 9, 11, 13, 15, 17, 19, 25]
   prefixLen           = 4
   exec                = require('child_process').exec
@@ -28,7 +28,7 @@ module.exports = (robot) ->
   robot.hear /^.*\w+\W+\w+/, (msg)->
     console.log(markovmotronIsAlive )
     return unless markovmotronIsAlive
-    # return unless msg.random(probability)
+    return unless msg.random(probability)
 
     maxResponse = msg.random(maxWords)
     options     = "--words=#{maxResponse} --corpus=#{path}/corpus.txt --prefix=#{prefixLen}"
