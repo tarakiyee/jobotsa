@@ -26,7 +26,7 @@ module.exports = (robot) ->
 
   # any string 2 words or greater (roughly)
   robot.hear /^.*\w+\W+\w+/, (msg)->
-    console.log(markovmotronIsAlive + )
+    console.log(markovmotronIsAlive )
     return unless markovmotronIsAlive
     # return unless msg.random(probability)
 
