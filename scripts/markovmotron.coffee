@@ -44,6 +44,7 @@ module.exports = (robot) ->
     markovmotronIsAlive = true
     prefixLen           = +msg.match[1] if msg.match[1]
     msg.send ":godmode:"
+    console.log("It's on.")
 
   robot.respond /go home, you're drunk/i, (msg)->
     markovmotronIsAlive = false
